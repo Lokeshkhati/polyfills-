@@ -6,7 +6,7 @@ const arr = [10, 20, 30, 40, 50, 60]
 
 Array.prototype.mySome = function (callback) {
     for (let index = 0; index < this.length; index++) {
-        if (callback(this[index], index, this) !== false) {
+        if (callback(this[index], index, this)) {
             return true
         }
     }
@@ -14,7 +14,7 @@ Array.prototype.mySome = function (callback) {
 }
 
 const newArr = arr.mySome((value, index, array) => {
-    return (value < 40)
+    return (value === 400)
 })
 
 console.log(newArr)
