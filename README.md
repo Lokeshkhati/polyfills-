@@ -1,1 +1,1 @@
-# polyfills-
+# polyfills of JS methods
