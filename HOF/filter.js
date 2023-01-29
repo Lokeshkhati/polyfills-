@@ -15,7 +15,7 @@ Array.prototype.myFilter = function (callback) {
 let newArr = arr.myFilter((value, index, array) => {
     if (value % 2 === 0) {
         return value
-    }
+    } 
 })
 
 console.log(newArr)
