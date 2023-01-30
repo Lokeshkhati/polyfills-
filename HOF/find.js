@@ -1,9 +1,5 @@
 let arr = [1, 2, 3, 4, 5]
 
-// const found = arr.find((value) => {
-//    return  value >4
-// })
-
 
 Array.prototype.myFind = function (callback) {
 
