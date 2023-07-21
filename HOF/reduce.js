@@ -14,7 +14,5 @@ Array.prototype.myReduce = function (callback) {
     return currentVal
 }
 
-const sum = arr.myReduce((acc, val) => {
-    return acc + val
-})
+const sum = arr.myReduce((acc, val) => acc+val)
 console.log(sum)
