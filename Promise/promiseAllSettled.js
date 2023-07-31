@@ -27,11 +27,11 @@ const promiseAllSettled = (promises) => {
             catch (error) {
                 results[index] = { status: 'rejected', reason: error }
             }
-            if (index === promises.length - 1) resolve()
+            if (index === promises.length - 1) resolve(results)
         })
     })
 }
 
 
-Promise.allSettled([p1, p2, p3]).then((data) => console.log(data)).catch((error) => console.log(error))
+promiseAllSettled([p1, p2, p3]).then((data) => console.log(data)).catch((error) => console.log(error))
 
