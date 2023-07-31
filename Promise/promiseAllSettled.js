@@ -17,17 +17,21 @@ const p3 = new Promise((resolve, reject) => {
 // takes array of promises, returns a new promise which gets fulfilled on fulfillment of promise from array of promises
 
 const promiseAllSettled = (promises) => {
+    let pendingCount = promises.length;
+
     return new Promise((resolve) => {
         const results = []
         promises.forEach(async (promise, index) => {
             try {
                 const value = await promise
                 results[index] = { status: 'fulfilled', value }
+                pendingCount -= 1
             }
             catch (error) {
                 results[index] = { status: 'rejected', reason: error }
+                pendingCount -= 1
             }
-            if (index === promises.length - 1) resolve(results)
+            if (pendingCount === 0) resolve(results)
         })
     })
 }
